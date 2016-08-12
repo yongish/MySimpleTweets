@@ -32,7 +32,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         }
         // 3. Find the subviews to fill with data in the template
         ImageView ivProfileImage = (ImageView) convertView.findViewById(R.id.ivProfileImage);
-        TextView tvUserName = (TextView) convertView.findViewById(R.id.tvUserName);
+        TextView tvUserName = (TextView) convertView.findViewById(R.id.tvFullName);
         TextView tvBody = (TextView) convertView.findViewById(R.id.tvBody);
         // 4. Populate data into the subviews
         tvUserName.setText(tweet.getUser().getScreenName());
