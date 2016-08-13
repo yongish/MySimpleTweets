@@ -1,4 +1,4 @@
-package com.codepath.apps.mysimpletweets;
+package com.codepath.apps.mysimpletweets.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
+import com.codepath.apps.mysimpletweets.R;
 import com.codepath.apps.mysimpletweets.fragments.HomeTimelineFragment;
 import com.codepath.apps.mysimpletweets.fragments.MentionsTimelineFragment;
 
@@ -51,6 +54,15 @@ public class TimelineActivity extends AppCompatActivity {
         // Launch the profile view
         Intent i = new Intent(this, ProfileActivity.class);
         startActivity(i);
+    }
+
+    public void openProfile(View v) {
+        // Name of user
+        TextView tvFullName = (TextView) findViewById(R.id.tvFullName);
+        Intent i = new Intent(this, ProfileActivity.class);
+        i.putExtra("screen_name", tvFullName.getText());
+        startActivity(i);
+
     }
 
     // Return the order of the fragments in the view pager
